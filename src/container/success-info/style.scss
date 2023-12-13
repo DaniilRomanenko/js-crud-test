@@ -37,15 +37,3 @@
         }
 
     }
-    main{
-        display: flex;
-        flex-direction: column;
-        gap: s.space(10);
-    }
-    .user-list{
-        li{
-            padding-right: 15px;
-            padding-top: 5px;
-            padding-bottom: 5px;
-        }
-    }
