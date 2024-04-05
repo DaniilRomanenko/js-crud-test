@@ -3,6 +3,9 @@ const express = require('express')
 // Cтворюємо роутер - місце, куди ми підключаємо ендпоїнти
 const router = express.Router()
 
+// Создаем второй роутер
+// Подключаем модуль со вторым роутером
+
 // ================================================================
 class User {
   static #list = []
@@ -52,6 +55,7 @@ class User {
     }
   }
 }
+const productsList = [] // массив для хранения товаров
 // ================================================================
 
 // router.get Створює нам один ентпоїнт
@@ -118,10 +122,6 @@ router.post('/user-update', function (req, res) {
 
   console.log(email, password, id)
 
-  //let result = false;
-
-  //if()
-
   res.render('success-info', {
     style: 'success-info',
     info: result
@@ -131,5 +131,54 @@ router.post('/user-update', function (req, res) {
   // ↑↑ сюди вводимо JSON дані
 })
 
+// ================================================================
+// ↙️↙️↙️ тут вводимо шлях (PATH) до сторінки
+router.post('/product-create', function (req, res) {
+  // ↑↑ сюди вводимо JSON дані
+  const { name, price, description } = req.body
+
+  if (!name || !price || !description) {
+    // Отправка сообщения об ошибке в контейнер/алерт
+    res.render('alert', {
+      style: 'alert',
+      info: 'Пожалуйста, заполните все поля товара.',
+    })
+  } else {
+    let id = ''
+    for (let i = 0; i < 5; i++) {
+      id += Math.floor(Math.random() * 10)
+    }
+    const createDate = new Date()
+    createDate.setHours(createDate.getHours() + 2)
+    const isoDateString = createDate.toISOString()
+    const newProduct = {
+      name,
+      price,
+      description,
+      id,
+      createDate,
+    }
+    productsList.push(newProduct)
+    console.log(newProduct)
+    // Отправляем ответ клиенту с сообщением об успешном  создании товара
+    res.render('alert', {
+      style: 'alert',
+      info: 'Товар успешно создан и сохранен.',
+    })
+  }
+})
+
+// ================================================================
+// ↙️↙️↙️ тут вводимо шлях (PATH) до сторінки
+router.get('/product-list', function (req, res) {
+  //res.render('product-list') потом вернуть код из name123
+})
+
+// ================================================================
+// ↙️↙️↙️ тут вводимо шлях (PATH) до сторінки
+router.post('/product-update', function (req, res) {
+  // ↑↑ сюди вводимо JSON дані
+})
 // Підключаємо роутер до бек-енду
 module.exports = router
+//

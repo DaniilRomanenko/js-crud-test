@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .form {
   display: flex;
   flex-direction: column;
@@ -32,6 +33,16 @@
   padding: 8px;
   border-radius: 20px;
 }
+.form__button2 {
+  border: 1px solid #ddd;
+  padding: 8px;
+  background-color: blue;
+  color: white;
+}
+.form__description {
+  border: 1px solid #ddd;
+  padding: 32px;
+}
 
 main {
   display: flex;
@@ -43,6 +54,35 @@ main {
   padding-right: 15px;
   padding-top: 5px;
   padding-bottom: 5px;
+}
+
+.form__container {
+  display: flex;
+  gap: 32px;
+}
+
+.name,
+.price {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  gap: 32px;
+  border: 1px solid #ddd;
+  width: 700px;
+  flex: 1; /* Занимает доступное пространство равномерно */
+}
+
+.form_button2 {
+  border: 1px solid #ddd;
+  padding: 8px;
+  background-color: blue;
+  color: white;
+}
+
+.grey {
+  color: gray;
+  opacity: 0.6;
+  user-select: none;
 }
 
 /*# sourceMappingURL=style.css.map */

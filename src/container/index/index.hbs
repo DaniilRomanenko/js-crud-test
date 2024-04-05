@@ -2,7 +2,6 @@
 Це код container файлу для index сторінки, 
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
  }}
-
 <main class='main'>
   <section>
     <div class='form'>
@@ -55,7 +54,7 @@
     {{else}}
       <ul>
         {{#each list}}
-          <li>{{email}} | {{login}} || {{id}} <a href="/user-delete?id={{id}}">(видалити)</a></li>
+          <li>{{email}} || {{login}} || {{id}} <a href="/user-delete?id={{id}}">(видалити)</a></li>
         {{/each}}
       </ul>
     {{/if}}
@@ -64,8 +63,6 @@
       </div>
     </div>
   </section>
-
-
   <section>
     <div class='form'>
       <h1 class='form__title'>Оновоти пошту  користувача</h1>
@@ -107,6 +104,38 @@
       </form>
     </div>
   </section>
+  {{! // ================================================================ 
+   домашние задания №2 product=}}
+<section>
+  <div class='form'>
+    <h1 class='form__title'>Інформація про товар</h1>
+    <form method='POST' action='/product-create'>
+      <div class='form__content'>
+        <div class='form__container'>
+          <div class='form__field'>
+            <label class='for__label'>Назва товару</label>
+            <input type='text' name='name' class='name' />
+          </div>
+          <div class='form__field'>
+            <label class='for__label'>Ціна</label>
+            <input type='text' name='price' class='price' />
+          </div>
+        </div>
+        <div class='form__field'>
+          <label for='text' class='for__label'>Короткий опис товару</label>
+          <input type='text' name='description' class='form__description' />
+          <p class="grey">Відоброжається у картці товару</p>
+        </div>
+        <button class='form__button2'>Відправити</button>
+<a href="/index/product-list" class="button">Перейти к списку продуктов</a>
+
+ {{! тест кнопка удалить}}
+      </div>
+    </form>
+  </div>
+</section>
+{{! // =============================================
+ я рот ебал даного таска...... ТЗ Product-list}}
 </main>
 
 {{! 

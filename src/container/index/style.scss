@@ -14,7 +14,7 @@
             border-bottom: 1px solid s.color('light');
         }
         &__content{
-            display: grid;
+            display: grid; // // 
             gap: s.space(4);
         }
         &__field{
@@ -29,12 +29,26 @@
             width: 100%;
             border: 1px solid s.color('light');
             padding: s.space(2);
+            
         }
         &__button{
             border: 1px solid s.color('light');
             padding: s.space(2);
             border-radius: 20px;
         }
+        // кнока отправить в дз //
+        &__button2{
+            border: 1px solid s.color('light');
+            padding: s.space(2);
+            background-color: blue;
+            color: white;
+            
+        }
+        &__description{
+            border: 1px solid s.color('light');
+            padding: s.space(8);
+        }
+        
 
     }
     main{
@@ -48,4 +62,32 @@
             padding-top: 5px;
             padding-bottom: 5px;
         }
+
+    }
+    // TASK 1 так я тут сново сделал новую form__container я не знаю зачем ну пускай\
+    .form__container {
+        display: flex;
+        gap: s.space(8);
+    }
+    
+    .name,
+    .price {
+        display: flex;
+        flex-direction: column;
+        padding: s.space(2); 
+        gap: s.space(8);
+        border: 1px solid s.color('light');
+        width: 700px;
+        flex: 1; /* Занимает доступное пространство равномерно */
+    }
+    .form_button2{
+            border: 1px solid s.color('light');
+            padding: s.space(2);
+            background-color: blue;
+            color: white;
+    }
+    .grey{
+        color: gray;
+        opacity: 0.6;
+        user-select: none;
     }
