@@ -2,10 +2,141 @@
 Це код container файлу для index сторінки, 
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
  }}
-
-<div >
-  Hello world!
+<main class='main'>
+  <section>
+    <div class='form'>
+      <h1 class='form__title'>Створити користувача</h1>
+      <form method='POST' action='/user-create'>
+        <div class='form__content'>
+          <div class='form_field'>
+            <label for='email' class='for__label'>Email
+              адреса:</label>
+            <input
+              type='email'
+              name='email'
+              class='form__input'
+            />
+          </div>
+          <div class='form__field'>
+            <label
+              for='login'
+              class='for__label'
+            >Нікнейм:</label>
+            <input
+              type='login'
+              name='login'
+              class='form__input'
+            />
+          </div>
+          <div class='form__field'>
+            <label
+              for='password'
+              class='for__label'
+            >Пароль:</label>
+            <input
+              type='password'
+              name='password'
+              class='form__input'
+            />
+          </div>
+          <button class='form__button'>Створити</button>
+        </div>
+      </form>
+    </div>
+  </section>
+  <section>
+    <div class='form'>
+      <h1 class='form__title'>Список користувачів</h1>
+      <div class="user-list">
+  {{#with data.users}}
+    {{#if isEmpty}}
+      <mark>Пустий</mark>
+    {{else}}
+      <ul>
+        {{#each list}}
+          <li>{{email}} || {{login}} || {{id}} <a href="/user-delete?id={{id}}">(видалити)</a></li>
+        {{/each}}
+      </ul>
+    {{/if}}
+  {{/with}}
 </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class='form'>
+      <h1 class='form__title'>Оновоти пошту  користувача</h1>
+      <form method='POST' action='/user-update'>
+        <div class='form__content'>
+             <div class='form__field'>
+            <label
+              for='id'
+              class='for__label'
+            >ID:</label>
+            <input
+              type='id'
+              name='id'
+              class='form__input'
+            />
+          </div>
+          <div class='form_field'>
+            <label for='email' class='for__label'> Нова email
+              адреса:</label>
+            <input
+              type='email'
+              name='email'
+              class='form__input'
+            />
+          </div>
+          <div class='form__field'>
+            <label
+              for='password'
+              class='for__label'
+            >Пароль:</label>
+            <input
+              type='password'
+              name='password'
+              class='form__input'
+            />
+          </div>
+          <button class='form__button'>Відправити</button>
+        </div>
+      </form>
+    </div>
+  </section>
+  {{! // ================================================================ 
+   домашние задания №2 product=}}
+<section>
+  <div class='form'>
+    <h1 class='form__title'>Інформація про товар</h1>
+    <form method='POST' action='/product-create'>
+      <div class='form__content'>
+        <div class='form__container'>
+          <div class='form__field'>
+            <label class='for__label'>Назва товару</label>
+            <input type='text' name='name' class='name' />
+          </div>
+          <div class='form__field'>
+            <label class='for__label'>Ціна</label>
+            <input type='text' name='price' class='price' />
+          </div>
+        </div>
+        <div class='form__field'>
+          <label for='text' class='for__label'>Короткий опис товару</label>
+          <input type='text' name='description' class='form__description' />
+          <p class="grey">Відоброжається у картці товару</p>
+        </div>
+        <button class='form__button2'>Відправити</button>
+<a href="/index/product-list" class="button">Перейти к списку продуктов</a>
+
+ {{! тест кнопка удалить}}
+      </div>
+    </form>
+  </div>
+</section>
+{{! // =============================================
+ я рот ебал даного таска...... ТЗ Product-list}}
+</main>
 
 {{! 
     Цей код містить лише те, що буде виводитись в <body>
