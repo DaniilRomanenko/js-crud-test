@@ -55,7 +55,8 @@ class User {
     }
   }
 }
-const productsList = [] // массив для хранения товаров
+const productList = [] // массив для хранения товаров
+
 // ================================================================
 
 // router.get Створює нам один ентпоїнт
@@ -148,32 +149,38 @@ router.post('/product-create', function (req, res) {
     for (let i = 0; i < 5; i++) {
       id += Math.floor(Math.random() * 10)
     }
-    const createDate = new Date()
-    createDate.setHours(createDate.getHours() + 2)
-    const isoDateString = createDate.toISOString()
+    //const createDate = new Date()
+    //createDate.setHours(createDate.getHours() + 3)
+    //const isoDateString = createDate.toISOString()
     const newProduct = {
       name,
       price,
       description,
       id,
-      createDate,
+      //createDate,
     }
-    productsList.push(newProduct)
-    console.log(newProduct)
+    productList.push(newProduct)
+    console.log(productList)
     // Отправляем ответ клиенту с сообщением об успешном  создании товара
     res.render('alert', {
       style: 'alert',
       info: 'Товар успешно создан и сохранен.',
     })
   }
+  //newProduct = []
+  //console.log(newProduct)
 })
 
 // ================================================================
 // ↙️↙️↙️ тут вводимо шлях (PATH) до сторінки
 router.get('/product-list', function (req, res) {
   //res.render('product-list') потом вернуть код из name123
+  res.render('list', {
+    // вказуємо назву папки контейнера, в якій знаходяться наші стилі
+    style: 'list',
+    productList: productList, // подключаю массив с товарами
+  })
 })
-
 // ================================================================
 // ↙️↙️↙️ тут вводимо шлях (PATH) до сторінки
 router.post('/product-update', function (req, res) {

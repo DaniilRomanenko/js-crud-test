@@ -1,9 +1,13 @@
-.box {
-  width: 171px;
-  height: 240px;
-  border: 5px solid black;
-  border-radius: 0.5em;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+@charset "UTF-8";
+.name {
+  margin-left: 131px;
+  margin-bottom: 20px;
+  color: blue;
+  font-size: 25px;
+  width: 300px; /* установите значение ширины в соответствии с вашими потребностями */
+  height: 100px; /* установите значение высоты в соответствии с вашими потребностями */
+  line-height: 100px; /* измените line-height для центрирования текста по вертикали */
+  overflow: hidden; /* скрыть любой текст, который переполняет контейнер */
 }
 
 /*# sourceMappingURL=style.css.map */
