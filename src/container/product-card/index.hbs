@@ -1,0 +1,15 @@
+  {{! блок для наследований }}
+  <div class='box'>
+    {{#with newProduct}}
+    <h1 class='firs-name'>{{name}}
+    </h1>
+    <h4 class='describe'>{{description}}
+    </h4>
+    <p class='id'>ID:{{id}}</p>
+    <p class='price'>
+        {{price}}₴
+        {{/with}}
+    </p>
+    <button class='changes'>Редагувати</button>
+  </div>
+  {{!end}}

@@ -1,0 +1,13 @@
+<link
+  rel='stylesheet'
+  type='text/scss'
+  href='list\style.scss'
+/>
+
+<main>
+  <div class='name'>Список товарів</div>
+  {{#each productList}}
+   {{> ../product-card/index newProduct=this}}
+   
+  {{/each}}
+</main>
